@@ -1,0 +1,6 @@
+PORT=3500
+MONGODB_URI=mongodb+srv://gvreadmin:P9vxkd801T4f35F2@db-mongodb-prod-crm-e062a978.mongo.ondigitalocean.com/gvre?authSource=admin&replicaSet=db-mongodb-prod-crm&tls=true&tlsCAFile=/Users/Ele/certificates/ca-certificate.crt
+BUCKET_NAME=gvre-images
+AWS_ACCESS_KEY_ID=ACJADUAJCSUF6INZH7XU
+AWS_SECRET_ACCESS_KEY=xjX7q/kz3OAY9tYU3Mh7USC1kSqrDEvETaoCPM0QRTg
+S3_ENDPOINT=fra1.digitaloceanspaces.com
