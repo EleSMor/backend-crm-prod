@@ -94,14 +94,49 @@ const sendAdsToContact = (req, res) => {
                            <a
                            href="${ad.department === "Residencial" ? 'https://gvre.es/residentialItem/' + ad._id : 'https://gvre.es/patrimonialItem/' + ad._id}"
                            target="_blank"
+			   style="font-size:larger !important;color:rgb(43,54,61) !important;text-decoration:none !important;"
                            >
-                            <img
-                              src=${!!ad.images.main ? ad.images.main : "https://images.assetsdelivery.com/compings_v2/pavelstasevich/pavelstasevich1811/pavelstasevich181101031.jpg"}
-                              width="600px"
-                              alt="Imagen de anuncio"
-                              style="display: block; font-size: 0px; margin: auto"
-                              class="CToWUd"
-                            />
+                            <div style="
+                              margin:0 auto;
+                              justify-content:center !important;
+                              align-items:center !important;
+                              align-content:center !important;
+                              text-align:center !important;
+                              width:200px;
+                              padding-left:40px;
+                              padding-right:40px;
+                              padding-top:8px;
+                              padding-bottom:8px;
+                              background-color:rgb(219, 218, 218);
+                              border-radius:6px;
+                              "
+                              >
+                              <img
+                               src="https://gvre.es/static/media/logogvre.4bd1abc4.png"
+                               alt="Agent portrait"
+                               border="0"
+                               width="60"
+                               height="60"
+                               style="
+                                 font-size: 0px;
+                                 border-top-left-radius: 50%;
+                                 border-top-right-radius: 50%;
+                                 border-bottom-right-radius: 50%;
+                                 border-bottom-left-radius: 50%;
+                               "
+                               class="CToWUd"
+                               />
+                              <span style="
+                                margin-left: 18px;
+                                vertical-align: 20px;
+                                font-family:Helvetica;
+                                font-size:16px;
+                                font-weight:bold;
+                                text-align:center !important;
+                                " >
+                                 ${ad.buildSurface && ad.buildSurface != 0 && ad.buildSurface != 999999999 ? ad.buildSurface+` m<sup>2</sup>` : ''}
+                              </span>
+                            </div>
                           </a>
                         </td>
                       </tr>
@@ -154,11 +189,15 @@ const sendAdsToContact = (req, res) => {
                           >
                             ${ad.description.emailPDF}<span>&nbsp;</span
                             ><a
-                              href=""
+                              href="${ad.department === "Residencial" ? 'https://gvre.es/residentialItem/' + ad._id : 'https://gvre.es/patrimonialItem/' + ad._id}"
                               target="_blank"
                               data-saferedirecturl="https://www.google.com/url?q="
-                              style="text-decoration: none; color: inherit"
-                              >Saber más</a
+                              style="font-size:larger !important;color:rgb(255, 255, 255) !important;text-decoration:none !important;"
+                              >
+				<div style="margin:0 auto;margin-top:5%;justify-content:center !important;align-items:center !important;align-content:center !important;text-align:center !important;width:200px;padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;background-color:rgb(43,54,61);border-radius:6px;">
+                                  IR AL ANUNCIO
+                                </div>
+			    </a
                             >
                             <span>&nbsp;</span>
                             <br /><br />
@@ -1159,15 +1198,50 @@ const sendAdToContacts = (req, res) => {
                                               <td valign="top" style="border-collapse: collapse; vertical-align: top">
                                                 <a
                                                 href="${req.body.ad.department === "Residencial" ? 'https://gvre.es/residentialItem/' + req.body.ad._id : 'https://gvre.es/patrimonialItem/' + req.body.ad._id}"
-                                                target="_blank"
-                                                >
-                                                  <img
-                                                    src=${!!req.body.ad.images.main ? req.body.ad.images.main : "https://images.assetsdelivery.com/compings_v2/pavelstasevich/pavelstasevich1811/pavelstasevich181101031.jpg"}
-                                                    width="600px"
-                                                    alt="Imagen de anuncio"
-                                                    style="display: block; font-size: 0px; margin: auto"
-                                                    class="CToWUd"
-                                                  />
+                                                target="_blank" style="font-size:larger !important;color:rgb(43,54,61) !important;text-decoration:none !important;"
+                           >
+                             <div style="
+                              margin:0 auto;
+                              justify-content:center !important;
+                              align-items:center !important;
+                              align-content:center !important;
+                              text-align:center !important;
+                              width:200px;
+                              padding-left:40px;
+                              padding-right:40px;
+                              padding-top:8px;
+                              padding-bottom:8px;
+                              background-color:rgb(219, 218, 218);
+                              border-radius:6px;
+                              "
+                              >
+                              <img
+                               src="https://gvre.es/static/media/logogvre.4bd1abc4.png"
+                               alt="Agent portrait"
+                               border="0"
+                               width="60"
+                               height="60"
+                               style="
+                                 font-size: 0px;
+                                 border-top-left-radius: 50%;
+                                 border-top-right-radius: 50%;
+                                 border-bottom-right-radius: 50%;
+                                 border-bottom-left-radius: 50%;
+                               "
+                               class="CToWUd"
+                               />
+                              <span style="
+                                margin-left: 18px;
+                                vertical-align: 20px;
+                                font-family:Helvetica;
+                                font-size:16px;
+                                font-weight:bold;
+                                text-align:center !important;
+                                " >
+	                         ${req.body.ad.buildSurface && req.body.ad.buildSurface != 0 && req.body.ad.buildSurface != 999999999 ? req.body.ad.buildSurface+` m<sup>2</sup>` : ''}
+                              </span>
+                            </div>
+                                                
                                                 </a>
                                               </td>
                                             </tr>
@@ -1222,12 +1296,15 @@ const sendAdToContacts = (req, res) => {
                                                 >
                                                   ${req.body.ad.description.emailPDF}<span>&nbsp;</span
                                                   ><a
-                                                    href=""
+                                                    href="${req.body.ad.department === "Residencial" ? 'https://gvre.es/residentialItem/' + req.body.ad._id : 'https://gvre.es/patrimonialItem/' + req.body.ad._id}"
                                                     target="_blank"
                                                     data-saferedirecturl="https://www.google.com/url?q="
-                                                    style="text-decoration: none; color: inherit"
-                                                    >Saber más</a
-                                                  >
+                                                    style="font-size:larger !important;color:rgb(255, 255, 255) !important;text-decoration:none !important;"
+                                                    >
+                                                    <div style="margin:0 auto;margin-top:5%;justify-content:center !important;align-items:center !important;align-content:center !important;text-align:center !important;width:200px;padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;background-color:rgb(43,54,61);border-radius:6px;">
+                                                      IR AL ANUNCIO
+                                                    </div>                                                    
+						  </a>
                                                   <span>&nbsp;</span>
                                                   <br /><br />
                                                 </div>
@@ -1517,3 +1594,4 @@ const sendAdToContacts = (req, res) => {
 
 
 module.exports = { sendAdsToContact, sendAdToContacts }
+
